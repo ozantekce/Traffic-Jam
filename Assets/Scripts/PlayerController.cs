@@ -24,7 +24,7 @@ public class PlayerController:MonoBehaviour
     [SerializeField]
     private float acceleration = 500f;
     [SerializeField]
-    private float maxTurnAngle = 15f;
+    private float maxTurnAngle = 60f;
     [SerializeField]
     private float breakPower = 500f;
 
@@ -113,18 +113,23 @@ public class PlayerController:MonoBehaviour
     public void ControlMinMaxVelocity()
     {
 
-        float velZ = rigidbody.velocity.z;
+        /*
+        float currentVel = rigidbody.velocity.magnitude;
 
-        velZ = Mathf.Clamp(velZ,minVelocity,maxVelocity);
 
-        Vector3 velocity = rigidbody.velocity;
-        velocity.z = velZ;
+        currentVel = Mathf.Clamp(currentVel, minVelocity,maxVelocity);
+
+
+        Vector3 velocity = rigidbody.velocity.normalized * currentVel;
+
         rigidbody.velocity = velocity;
+        */
+
 
     }
 
 
-    private float rangeX=5f,rangeY=20f,rangeZ=2f;
+    private float rangeX=5f,rangeY=359f,rangeZ=16f;
     public void ControlRotation()
     {
 
